@@ -9,15 +9,15 @@ public struct MainTabView: View {
                 .tabItem {
                     Label("Capture", systemImage: "square.and.pencil")
                 }
-            
+
             QueryView()
                 .tabItem {
                     Label("Query", systemImage: "magnifyingglass")
                 }
-            
+
             DashboardView()
                 .tabItem {
-                    Label("Dashboard", systemImage: "gauge")
+                    Label("Executive", systemImage: "gauge.with.dots.needle.bottom.50percent")
                 }
         }
     }
