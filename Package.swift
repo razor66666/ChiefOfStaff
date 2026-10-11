@@ -10,7 +10,7 @@ let package = Package(
     products: [
         .library(
             name: "ChiefOfStaff",
-            targets: ["ChiefOfStaff"]),
+            targets: ["ChiefOfStaff"])
     ],
     targets: [
         .target(
@@ -22,6 +22,6 @@ let package = Package(
             name: "ChiefOfStaffTests",
             dependencies: ["ChiefOfStaff"],
             path: "Tests/ChiefOfStaffTests"
-        ),
+        )
     ]
 )

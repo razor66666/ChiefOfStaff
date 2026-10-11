@@ -12,7 +12,6 @@ final class NetworkTransportTests: XCTestCase {
             visibility: "public"
         )
         
-        // Setup mock response handler (HTTP 200 OK)
         MockURLProtocol.requestHandler = { request in
             let response = HTTPURLResponse(
                 url: request.url!,
@@ -23,7 +22,10 @@ final class NetworkTransportTests: XCTestCase {
             return (response, nil)
         }
         
-        // Execute dispatch test
+        let config = URLSessionConfiguration.ephemeral
+        config.protocolClasses = [MockURLProtocol.self]
+        transport.session = URLSession(configuration: config)
+        
         let success = await transport.sendPayload(testPayload)
         XCTAssertTrue(success, "NetworkTransport should return true on 200 OK HTTP response.")
     }
