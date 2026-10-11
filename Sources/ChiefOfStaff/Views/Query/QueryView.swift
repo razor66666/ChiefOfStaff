@@ -124,11 +124,19 @@ public struct QueryView: View {
             }
             .navigationTitle("Public Query")
             .toolbar {
+                #if os(iOS)
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: loadMockVaultData) {
                         Image(systemName: "arrow.clockwise")
                     }
                 }
+                #else
+                ToolbarItem(placement: .primaryAction) {
+                    Button(action: loadMockVaultData) {
+                        Image(systemName: "arrow.clockwise")
+                    }
+                }
+                #endif
             }
             .sheet(item: $selectedNote) { note in
                 NavigationStack {

@@ -88,7 +88,7 @@ public struct DashboardView: View {
                         }
                         .padding()
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .background(Color(.tertiarySystemBackground))
+                        .background(Color.customTertiarySystemBackground)
                         .cornerRadius(10)
                         .overlay(
                             RoundedRectangle(cornerRadius: 10)
