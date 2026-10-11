@@ -18,11 +18,17 @@ final class QueueManagerTests: XCTestCase {
 
         // 2. Fetch
         let pending = manager.fetchAllPendingPayloads()
-        XCTAssertTrue(pending.contains(where: { $0.id == testPayload.id }), "Pending queue should contain the enqueued payload.")
+        XCTAssertTrue(
+            pending.contains(where: { $0.id == testPayload.id }),
+            "Pending queue should contain the enqueued payload."
+        )
 
         // 3. Dequeue
         manager.dequeue(id: testPayload.id)
         let updatedPending = manager.fetchAllPendingPayloads()
-        XCTAssertFalse(updatedPending.contains(where: { $0.id == testPayload.id }), "Payload should be removed from disk after dequeuing.")
+        XCTAssertFalse(
+            updatedPending.contains(where: { $0.id == testPayload.id }),
+            "Payload should be removed from disk after dequeuing."
+        )
     }
 }

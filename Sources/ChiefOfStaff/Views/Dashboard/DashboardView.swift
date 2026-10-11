@@ -5,10 +5,42 @@ public struct DashboardView: View {
 
     // Configurable Council State Array (Sanitized for Open-Source)
     @State private var councilPersonas: [PersonaConfig] = [
-        PersonaConfig(id: "blocker_mgr", name: "Blocker Manager", role: "Critical Path Guard", iconName: "exclamationmark.shield.fill", colorHex: "red", metricCount: 1, metricLabel: "Blockers"),
-        PersonaConfig(id: "risk_mgr", name: "Risk Guardian", role: "Evidence & Security", iconName: "eye.fill", colorHex: "orange", metricCount: 0, metricLabel: "Risks"),
-        PersonaConfig(id: "logic_mgr", name: "Logic Challenger", role: "Assumption Audit", iconName: "bolt.horizontal.fill", colorHex: "purple", metricCount: 2, metricLabel: "Challenges"),
-        PersonaConfig(id: "triage_mgr", name: "Triage Gatekeeper", role: "Speculative Queue", iconName: "tray.full.fill", colorHex: "gray", metricCount: 4, metricLabel: "Queue Items")
+        PersonaConfig(
+            id: "blocker_mgr",
+            name: "Blocker Manager",
+            role: "Critical Path Guard",
+            iconName: "exclamationmark.shield.fill",
+            colorHex: "red",
+            metricCount: 1,
+            metricLabel: "Blockers"
+        ),
+        PersonaConfig(
+            id: "risk_mgr",
+            name: "Risk Guardian",
+            role: "Evidence & Security",
+            iconName: "eye.fill",
+            colorHex: "orange",
+            metricCount: 0,
+            metricLabel: "Risks"
+        ),
+        PersonaConfig(
+            id: "logic_mgr",
+            name: "Logic Challenger",
+            role: "Assumption Audit",
+            iconName: "bolt.horizontal.fill",
+            colorHex: "purple",
+            metricCount: 2,
+            metricLabel: "Challenges"
+        ),
+        PersonaConfig(
+            id: "triage_mgr",
+            name: "Triage Gatekeeper",
+            role: "Speculative Queue",
+            iconName: "tray.full.fill",
+            colorHex: "gray",
+            metricCount: 4,
+            metricLabel: "Queue Items"
+        )
     ]
 
     public init() {}

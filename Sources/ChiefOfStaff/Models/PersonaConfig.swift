@@ -10,7 +10,15 @@ public struct PersonaConfig: Identifiable, Codable, Equatable {
     public var metricCount: Int
     public let metricLabel: String
 
-    public init(id: String, name: String, role: String, iconName: String, colorHex: String, metricCount: Int, metricLabel: String) {
+    public init(
+        id: String,
+        name: String,
+        role: String,
+        iconName: String,
+        colorHex: String,
+        metricCount: Int,
+        metricLabel: String
+    ) {
         self.id = id
         self.name = name
         self.role = role

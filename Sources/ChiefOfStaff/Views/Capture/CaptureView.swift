@@ -75,7 +75,11 @@ public struct CaptureView: View {
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(content.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? Color.gray : Color.blue)
+                        .background(
+                            content.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+                                ? Color.gray
+                                : Color.blue
+                        )
                         .cornerRadius(10)
                     }
                     .disabled(content.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)

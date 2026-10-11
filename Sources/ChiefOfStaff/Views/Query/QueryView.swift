@@ -32,10 +32,10 @@ public struct QueryView: View {
                     TextField("Search public knowledge...", text: $searchQuery)
                         .textFieldStyle(.plain)
                     if !searchQuery.isEmpty {
-                        Button(action: { searchQuery = "" }) {
+                        Button(action: { searchQuery = "" }, label: {
                             Image(systemName: "xmark.circle.fill")
                                 .foregroundColor(.secondary)
-                        }
+                        })
                     }
                 }
                 .padding(10)
@@ -79,7 +79,7 @@ public struct QueryView: View {
                     Spacer()
                 } else {
                     List(filteredNotes) { note in
-                        Button(action: { selectedNote = note }) {
+                        Button(action: { selectedNote = note }, label: {
                             VStack(alignment: .leading, spacing: 6) {
                                 HStack {
                                     Text(note.title)
@@ -117,7 +117,7 @@ public struct QueryView: View {
                                 }
                             }
                             .padding(.vertical, 4)
-                        }
+                        })
                     }
                     .listStyle(.plain)
                 }

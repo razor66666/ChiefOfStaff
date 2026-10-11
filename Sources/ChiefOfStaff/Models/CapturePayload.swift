@@ -19,7 +19,15 @@ public struct CapturePayload: Codable, Identifiable {
     public var tags: [String]
     public var visibility: String
 
-    public init(id: UUID = UUID(), timestamp: Date = Date(), category: CaptureCategory = .inbox, title: String, content: String, tags: [String] = [], visibility: String = "private") {
+    public init(
+        id: UUID = UUID(),
+        timestamp: Date = Date(),
+        category: CaptureCategory = .inbox,
+        title: String,
+        content: String,
+        tags: [String] = [],
+        visibility: String = "private"
+    ) {
         self.id = id
         self.timestamp = timestamp
         self.category = category
