@@ -1,0 +1,21 @@
+{
+    "sourcekit-lsp.serverArguments": [
+        "-Xswiftc", "-sdk", 
+        "-Xswiftc", "C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Platforms\\6.4.0\\Windows.platform\\Developer\\SDKs\\Windows.sdk",
+        "-Xswiftc", "-target", 
+        "-Xswiftc", "x86_64-unknown-windows-msvc"
+    ],
+
+    "terminal.integrated.profiles.windows": {
+        "PowerShell (Developer)": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell",
+            "args": [
+                "-NoExit",
+                "-Command",
+                "& 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\Tools\\Launch-DevShell.ps1' -Arch amd64 -HostArch amd64"
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell (Developer)"
+}
