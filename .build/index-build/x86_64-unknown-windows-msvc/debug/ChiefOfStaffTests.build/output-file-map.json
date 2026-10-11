@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffTests.build\\primary.swiftdeps"
+  },
+  "C:\\workspace\\ChiefOfStaff\\Tests\\ChiefOfStaffTests\\TestUtilities\\MockURLProtocol.swift": {
+    "dependencies": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffTests.build\\MockURLProtocol.d",
+    "object": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffTests.build\\MockURLProtocol.swift.o",
+    "swiftmodule": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffTests.build\\MockURLProtocol~partial.swiftmodule",
+    "swift-dependencies": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffTests.build\\MockURLProtocol.swiftdeps",
+    "diagnostics": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffTests.build\\MockURLProtocol.dia"  }
+}

@@ -1,0 +1,107 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "ChiefOfStaff-x86_64-unknown-windows-msvc-debug.module": ["<ChiefOfStaff-x86_64-unknown-windows-msvc-debug.module>"]
+  "ChiefOfStaffPackageDiscoveredTests-x86_64-unknown-windows-msvc-debug.module": ["<ChiefOfStaffPackageDiscoveredTests-x86_64-unknown-windows-msvc-debug.module>"]
+  "ChiefOfStaffPackageTests-x86_64-unknown-windows-msvc-debug.module": ["<ChiefOfStaffPackageTests-x86_64-unknown-windows-msvc-debug.module>"]
+  "ChiefOfStaffTests-x86_64-unknown-windows-msvc-debug.module": ["<ChiefOfStaffTests-x86_64-unknown-windows-msvc-debug.module>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<ChiefOfStaff-x86_64-unknown-windows-msvc-debug.module>"]
+  "test": ["<ChiefOfStaff-x86_64-unknown-windows-msvc-debug.module>","<ChiefOfStaffTests-x86_64-unknown-windows-msvc-debug.module>"]
+default: "main"
+nodes:
+  "C:\\workspace\\ChiefOfStaff\\Sources\\ChiefOfStaff/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "C:\\workspace\\ChiefOfStaff\\Tests\\ChiefOfStaffTests/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "<ChiefOfStaff-x86_64-unknown-windows-msvc-debug.module>":
+    tool: phony
+    inputs: ["C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\Modules\\ChiefOfStaff.swiftmodule"]
+    outputs: ["<ChiefOfStaff-x86_64-unknown-windows-msvc-debug.module>"]
+
+  "<ChiefOfStaffPackageDiscoveredTests-x86_64-unknown-windows-msvc-debug.module>":
+    tool: phony
+    inputs: ["C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\Modules\\ChiefOfStaffPackageDiscoveredTests.swiftmodule"]
+    outputs: ["<ChiefOfStaffPackageDiscoveredTests-x86_64-unknown-windows-msvc-debug.module>"]
+
+  "<ChiefOfStaffPackageTests-x86_64-unknown-windows-msvc-debug.module>":
+    tool: phony
+    inputs: ["C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\Modules\\ChiefOfStaffPackageTests.swiftmodule"]
+    outputs: ["<ChiefOfStaffPackageTests-x86_64-unknown-windows-msvc-debug.module>"]
+
+  "<ChiefOfStaffTests-x86_64-unknown-windows-msvc-debug.module>":
+    tool: phony
+    inputs: ["C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\Modules\\ChiefOfStaffTests.swiftmodule"]
+    outputs: ["<ChiefOfStaffTests-x86_64-unknown-windows-msvc-debug.module>"]
+
+  "C.ChiefOfStaff-x86_64-unknown-windows-msvc-debug.module":
+    tool: shell
+    inputs: ["C:\\workspace\\ChiefOfStaff\\Sources\\ChiefOfStaff\\Models\\CapturePayload.swift","C:\\workspace\\ChiefOfStaff\\Sources\\ChiefOfStaff\\Services\\NetworkTransport.swift","C:\\workspace\\ChiefOfStaff\\Sources\\ChiefOfStaff\\Services\\QueueManager.swift","C:\\workspace\\ChiefOfStaff\\Sources\\ChiefOfStaff\\Views\\Capture\\CaptureView.swift","C:\\workspace\\ChiefOfStaff\\Sources\\ChiefOfStaff\\Views\\Dashboard\\DashboardView.swift","C:\\workspace\\ChiefOfStaff\\Sources\\ChiefOfStaff\\Views\\MainTabView.swift","C:\\workspace\\ChiefOfStaff\\Sources\\ChiefOfStaff\\Views\\Query\\QueryView.swift","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\swift-version-11AC5EA83DCCD38E.txt","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\sources"]
+    outputs: ["C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\Modules\\ChiefOfStaff.swiftmodule"]
+    description: "Compiling Swift Module 'ChiefOfStaff' (7 sources)"
+    args: ["C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Toolchains\\6.4.0+Asserts\\usr\\bin\\swiftc.exe","-module-name","ChiefOfStaff","-emit-dependencies","-emit-module","-emit-module-path","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\Modules\\ChiefOfStaff.swiftmodule","-output-file-map","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\output-file-map.json","-parse-as-library","-incremental","@C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\sources","-I","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\Modules","-target","x86_64-unknown-windows-msvc","-incremental","-enable-batch-mode","-serialize-diagnostics","-Onone","-enable-testing","-j24","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ModuleCache","-parseable-output","-parse-as-library","-static","-emit-objc-header","-emit-objc-header-path","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\include\\ChiefOfStaff-Swift.h","-swift-version","5","-Xfrontend","-experimental-lazy-typecheck","-Xfrontend","-experimental-skip-all-function-bodies","-Xfrontend","-experimental-allow-module-with-compiler-errors","-Xfrontend","-empty-abi-descriptor","-sdk","C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Platforms\\6.4.0\\Windows.platform\\Developer\\SDKs\\Windows.sdk","-libc","MD","-I","C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Platforms\\6.4.0\\Windows.platform\\Developer\\Library\\XCTest-6.4.0\\usr\\lib\\swift\\windows","-I","C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Platforms\\6.4.0\\Windows.platform\\Developer\\Library\\XCTest-6.4.0\\usr\\lib\\swift\\windows\\x86_64","-L","C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Platforms\\6.4.0\\Windows.platform\\Developer\\Library\\XCTest-6.4.0\\usr\\lib\\swift\\windows\\x86_64","-I","C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Platforms\\6.4.0\\Windows.platform\\Developer\\Library\\Testing-6.4.0\\usr\\lib\\swift\\windows","-L","C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Platforms\\6.4.0\\Windows.platform\\Developer\\Library\\Testing-6.4.0\\usr\\lib\\swift\\windows\\x86_64","-use-ld=lld","-g","-use-ld=lld","-Xcc","-D_MT","-Xcc","-D_DLL","-Xcc","-Xclang","-Xcc","--dependent-lib=msvcrt","-Xcc","-gdwarf","-package-name","chiefofstaff"]
+
+  "C.ChiefOfStaffPackageDiscoveredTests-x86_64-unknown-windows-msvc-debug.module":
+    tool: shell
+    inputs: ["C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageDiscoveredTests.derived\\ChiefOfStaffTests.swift","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageDiscoveredTests.derived\\all-discovered-tests.swift","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\swift-version-11AC5EA83DCCD38E.txt","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\Modules\\ChiefOfStaffTests.swiftmodule","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageDiscoveredTests.build\\sources"]
+    outputs: ["C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\Modules\\ChiefOfStaffPackageDiscoveredTests.swiftmodule"]
+    description: "Compiling Swift Module 'ChiefOfStaffPackageDiscoveredTests' (2 sources)"
+    args: ["C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Toolchains\\6.4.0+Asserts\\usr\\bin\\swiftc.exe","-module-name","ChiefOfStaffPackageDiscoveredTests","-emit-dependencies","-emit-module","-emit-module-path","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\Modules\\ChiefOfStaffPackageDiscoveredTests.swiftmodule","-output-file-map","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageDiscoveredTests.build\\output-file-map.json","-parse-as-library","-incremental","@C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageDiscoveredTests.build\\sources","-I","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\Modules","-target","x86_64-unknown-windows-msvc","-incremental","-enable-batch-mode","-serialize-diagnostics","-Onone","-enable-testing","-Xfrontend","-enable-cross-import-overlays","-j24","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ModuleCache","-parseable-output","-parse-as-library","-static","-emit-objc-header","-emit-objc-header-path","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageDiscoveredTests.build\\include\\ChiefOfStaffPackageDiscoveredTests-Swift.h","-Xfrontend","-experimental-lazy-typecheck","-Xfrontend","-experimental-skip-all-function-bodies","-Xfrontend","-experimental-allow-module-with-compiler-errors","-Xfrontend","-empty-abi-descriptor","-sdk","C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Platforms\\6.4.0\\Windows.platform\\Developer\\SDKs\\Windows.sdk","-libc","MD","-I","C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Platforms\\6.4.0\\Windows.platform\\Developer\\Library\\XCTest-6.4.0\\usr\\lib\\swift\\windows","-I","C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Platforms\\6.4.0\\Windows.platform\\Developer\\Library\\XCTest-6.4.0\\usr\\lib\\swift\\windows\\x86_64","-L","C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Platforms\\6.4.0\\Windows.platform\\Developer\\Library\\XCTest-6.4.0\\usr\\lib\\swift\\windows\\x86_64","-I","C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Platforms\\6.4.0\\Windows.platform\\Developer\\Library\\Testing-6.4.0\\usr\\lib\\swift\\windows","-L","C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Platforms\\6.4.0\\Windows.platform\\Developer\\Library\\Testing-6.4.0\\usr\\lib\\swift\\windows\\x86_64","-use-ld=lld","-g","-use-ld=lld","-Xcc","-D_MT","-Xcc","-D_DLL","-Xcc","-Xclang","-Xcc","--dependent-lib=msvcrt","-Xcc","-gdwarf","-package-name","chiefofstaff"]
+
+  "C.ChiefOfStaffPackageTests-x86_64-unknown-windows-msvc-debug.module":
+    tool: shell
+    inputs: ["C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageTests.derived\\runner.swift","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\swift-version-11AC5EA83DCCD38E.txt","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\Modules\\ChiefOfStaffTests.swiftmodule","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\Modules\\ChiefOfStaffPackageDiscoveredTests.swiftmodule","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageTests.build\\sources"]
+    outputs: ["C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\Modules\\ChiefOfStaffPackageTests.swiftmodule"]
+    description: "Compiling Swift Module 'ChiefOfStaffPackageTests' (1 sources)"
+    args: ["C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Toolchains\\6.4.0+Asserts\\usr\\bin\\swiftc.exe","-module-name","ChiefOfStaffPackageTests","-emit-dependencies","-emit-module","-emit-module-path","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\Modules\\ChiefOfStaffPackageTests.swiftmodule","-output-file-map","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageTests.build\\output-file-map.json","-parse-as-library","-incremental","@C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageTests.build\\sources","-I","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\Modules","-target","x86_64-unknown-windows-msvc","-incremental","-enable-batch-mode","-serialize-diagnostics","-Onone","-enable-testing","-Xfrontend","-enable-cross-import-overlays","-j24","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ModuleCache","-parseable-output","-parse-as-library","-static","-emit-objc-header","-emit-objc-header-path","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageTests.build\\include\\ChiefOfStaffPackageTests-Swift.h","-Xfrontend","-experimental-lazy-typecheck","-Xfrontend","-experimental-skip-all-function-bodies","-Xfrontend","-experimental-allow-module-with-compiler-errors","-Xfrontend","-empty-abi-descriptor","-sdk","C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Platforms\\6.4.0\\Windows.platform\\Developer\\SDKs\\Windows.sdk","-libc","MD","-I","C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Platforms\\6.4.0\\Windows.platform\\Developer\\Library\\XCTest-6.4.0\\usr\\lib\\swift\\windows","-I","C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Platforms\\6.4.0\\Windows.platform\\Developer\\Library\\XCTest-6.4.0\\usr\\lib\\swift\\windows\\x86_64","-L","C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Platforms\\6.4.0\\Windows.platform\\Developer\\Library\\XCTest-6.4.0\\usr\\lib\\swift\\windows\\x86_64","-I","C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Platforms\\6.4.0\\Windows.platform\\Developer\\Library\\Testing-6.4.0\\usr\\lib\\swift\\windows","-L","C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Platforms\\6.4.0\\Windows.platform\\Developer\\Library\\Testing-6.4.0\\usr\\lib\\swift\\windows\\x86_64","-use-ld=lld","-g","-use-ld=lld","-Xcc","-D_MT","-Xcc","-D_DLL","-Xcc","-Xclang","-Xcc","--dependent-lib=msvcrt","-Xcc","-gdwarf","-package-name","chiefofstaff"]
+
+  "C.ChiefOfStaffTests-x86_64-unknown-windows-msvc-debug.module":
+    tool: shell
+    inputs: ["C:\\workspace\\ChiefOfStaff\\Tests\\ChiefOfStaffTests\\TestUtilities\\MockURLProtocol.swift","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\swift-version-11AC5EA83DCCD38E.txt","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\Modules\\ChiefOfStaff.swiftmodule","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffTests.build\\sources"]
+    outputs: ["C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\Modules\\ChiefOfStaffTests.swiftmodule"]
+    description: "Compiling Swift Module 'ChiefOfStaffTests' (1 sources)"
+    args: ["C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Toolchains\\6.4.0+Asserts\\usr\\bin\\swiftc.exe","-module-name","ChiefOfStaffTests","-emit-dependencies","-emit-module","-emit-module-path","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\Modules\\ChiefOfStaffTests.swiftmodule","-output-file-map","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffTests.build\\output-file-map.json","-parse-as-library","-incremental","@C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffTests.build\\sources","-I","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\Modules","-target","x86_64-unknown-windows-msvc","-incremental","-enable-batch-mode","-serialize-diagnostics","-Onone","-enable-testing","-Xfrontend","-enable-cross-import-overlays","-j24","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ModuleCache","-parseable-output","-parse-as-library","-static","-swift-version","5","-Xfrontend","-experimental-lazy-typecheck","-Xfrontend","-experimental-skip-all-function-bodies","-Xfrontend","-experimental-allow-module-with-compiler-errors","-Xfrontend","-empty-abi-descriptor","-sdk","C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Platforms\\6.4.0\\Windows.platform\\Developer\\SDKs\\Windows.sdk","-libc","MD","-I","C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Platforms\\6.4.0\\Windows.platform\\Developer\\Library\\XCTest-6.4.0\\usr\\lib\\swift\\windows","-I","C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Platforms\\6.4.0\\Windows.platform\\Developer\\Library\\XCTest-6.4.0\\usr\\lib\\swift\\windows\\x86_64","-L","C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Platforms\\6.4.0\\Windows.platform\\Developer\\Library\\XCTest-6.4.0\\usr\\lib\\swift\\windows\\x86_64","-I","C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Platforms\\6.4.0\\Windows.platform\\Developer\\Library\\Testing-6.4.0\\usr\\lib\\swift\\windows","-L","C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Platforms\\6.4.0\\Windows.platform\\Developer\\Library\\Testing-6.4.0\\usr\\lib\\swift\\windows\\x86_64","-use-ld=lld","-g","-use-ld=lld","-Xcc","-D_MT","-Xcc","-D_DLL","-Xcc","-Xclang","-Xcc","--dependent-lib=msvcrt","-Xcc","-gdwarf","-package-name","chiefofstaff"]
+
+  "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","C:\\workspace\\ChiefOfStaff\\Sources\\ChiefOfStaff\\Models\\CapturePayload.swift","C:\\workspace\\ChiefOfStaff\\Sources\\ChiefOfStaff\\Services\\NetworkTransport.swift","C:\\workspace\\ChiefOfStaff\\Sources\\ChiefOfStaff\\Services\\QueueManager.swift","C:\\workspace\\ChiefOfStaff\\Sources\\ChiefOfStaff\\Views\\Capture\\CaptureView.swift","C:\\workspace\\ChiefOfStaff\\Sources\\ChiefOfStaff\\Views\\Dashboard\\DashboardView.swift","C:\\workspace\\ChiefOfStaff\\Sources\\ChiefOfStaff\\Views\\MainTabView.swift","C:\\workspace\\ChiefOfStaff\\Sources\\ChiefOfStaff\\Views\\Query\\QueryView.swift"]
+    outputs: ["C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\sources"]
+    description: "Write auxiliary file C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\sources"
+
+  "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageDiscoveredTests.build\\sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageDiscoveredTests.derived\\ChiefOfStaffTests.swift","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageDiscoveredTests.derived\\all-discovered-tests.swift"]
+    outputs: ["C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageDiscoveredTests.build\\sources"]
+    description: "Write auxiliary file C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageDiscoveredTests.build\\sources"
+
+  "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageTests.build\\sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageTests.derived\\runner.swift"]
+    outputs: ["C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageTests.build\\sources"]
+    description: "Write auxiliary file C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageTests.build\\sources"
+
+  "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffTests.build\\sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","C:\\workspace\\ChiefOfStaff\\Tests\\ChiefOfStaffTests\\TestUtilities\\MockURLProtocol.swift"]
+    outputs: ["C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffTests.build\\sources"]
+    description: "Write auxiliary file C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffTests.build\\sources"
+
+  "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\swift-version-11AC5EA83DCCD38E.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Toolchains\\6.4.0+Asserts\\usr\\bin\\swiftc.exe"]
+    outputs: ["C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\swift-version-11AC5EA83DCCD38E.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\swift-version-11AC5EA83DCCD38E.txt"
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["C:\\workspace\\ChiefOfStaff\\Sources\\ChiefOfStaff/","C:\\workspace\\ChiefOfStaff\\Tests\\ChiefOfStaffTests/","C:\\workspace\\ChiefOfStaff\\Package.swift","C:\\workspace\\ChiefOfStaff\\Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+

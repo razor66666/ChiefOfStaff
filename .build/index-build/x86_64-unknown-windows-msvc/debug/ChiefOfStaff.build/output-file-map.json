@@ -1,0 +1,47 @@
+{
+  "": {
+    "swift-dependencies": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\primary.swiftdeps"
+  },
+  "C:\\workspace\\ChiefOfStaff\\Sources\\ChiefOfStaff\\Models\\CapturePayload.swift": {
+    "dependencies": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\CapturePayload.d",
+    "object": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\CapturePayload.swift.o",
+    "swiftmodule": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\CapturePayload~partial.swiftmodule",
+    "swift-dependencies": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\CapturePayload.swiftdeps",
+    "diagnostics": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\CapturePayload.dia"  },
+  "C:\\workspace\\ChiefOfStaff\\Sources\\ChiefOfStaff\\Services\\NetworkTransport.swift": {
+    "dependencies": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\NetworkTransport.d",
+    "object": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\NetworkTransport.swift.o",
+    "swiftmodule": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\NetworkTransport~partial.swiftmodule",
+    "swift-dependencies": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\NetworkTransport.swiftdeps",
+    "diagnostics": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\NetworkTransport.dia"  },
+  "C:\\workspace\\ChiefOfStaff\\Sources\\ChiefOfStaff\\Services\\QueueManager.swift": {
+    "dependencies": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\QueueManager.d",
+    "object": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\QueueManager.swift.o",
+    "swiftmodule": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\QueueManager~partial.swiftmodule",
+    "swift-dependencies": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\QueueManager.swiftdeps",
+    "diagnostics": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\QueueManager.dia"  },
+  "C:\\workspace\\ChiefOfStaff\\Sources\\ChiefOfStaff\\Views\\Capture\\CaptureView.swift": {
+    "dependencies": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\CaptureView.d",
+    "object": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\CaptureView.swift.o",
+    "swiftmodule": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\CaptureView~partial.swiftmodule",
+    "swift-dependencies": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\CaptureView.swiftdeps",
+    "diagnostics": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\CaptureView.dia"  },
+  "C:\\workspace\\ChiefOfStaff\\Sources\\ChiefOfStaff\\Views\\Dashboard\\DashboardView.swift": {
+    "dependencies": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\DashboardView.d",
+    "object": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\DashboardView.swift.o",
+    "swiftmodule": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\DashboardView~partial.swiftmodule",
+    "swift-dependencies": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\DashboardView.swiftdeps",
+    "diagnostics": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\DashboardView.dia"  },
+  "C:\\workspace\\ChiefOfStaff\\Sources\\ChiefOfStaff\\Views\\MainTabView.swift": {
+    "dependencies": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\MainTabView.d",
+    "object": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\MainTabView.swift.o",
+    "swiftmodule": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\MainTabView~partial.swiftmodule",
+    "swift-dependencies": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\MainTabView.swiftdeps",
+    "diagnostics": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\MainTabView.dia"  },
+  "C:\\workspace\\ChiefOfStaff\\Sources\\ChiefOfStaff\\Views\\Query\\QueryView.swift": {
+    "dependencies": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\QueryView.d",
+    "object": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\QueryView.swift.o",
+    "swiftmodule": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\QueryView~partial.swiftmodule",
+    "swift-dependencies": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\QueryView.swiftdeps",
+    "diagnostics": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaff.build\\QueryView.dia"  }
+}

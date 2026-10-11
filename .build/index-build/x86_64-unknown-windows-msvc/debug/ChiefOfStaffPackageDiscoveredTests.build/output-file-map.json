@@ -1,0 +1,17 @@
+{
+  "": {
+    "swift-dependencies": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageDiscoveredTests.build\\primary.swiftdeps"
+  },
+  "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageDiscoveredTests.derived\\ChiefOfStaffTests.swift": {
+    "dependencies": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageDiscoveredTests.build\\ChiefOfStaffTests.d",
+    "object": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageDiscoveredTests.build\\ChiefOfStaffTests.swift.o",
+    "swiftmodule": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageDiscoveredTests.build\\ChiefOfStaffTests~partial.swiftmodule",
+    "swift-dependencies": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageDiscoveredTests.build\\ChiefOfStaffTests.swiftdeps",
+    "diagnostics": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageDiscoveredTests.build\\ChiefOfStaffTests.dia"  },
+  "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageDiscoveredTests.derived\\all-discovered-tests.swift": {
+    "dependencies": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageDiscoveredTests.build\\all-discovered-tests.d",
+    "object": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageDiscoveredTests.build\\all-discovered-tests.swift.o",
+    "swiftmodule": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageDiscoveredTests.build\\all-discovered-tests~partial.swiftmodule",
+    "swift-dependencies": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageDiscoveredTests.build\\all-discovered-tests.swiftdeps",
+    "diagnostics": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageDiscoveredTests.build\\all-discovered-tests.dia"  }
+}

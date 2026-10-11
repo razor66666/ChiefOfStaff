@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageTests.build\\primary.swiftdeps"
+  },
+  "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageTests.derived\\runner.swift": {
+    "dependencies": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageTests.build\\runner.d",
+    "object": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageTests.build\\runner.swift.o",
+    "swiftmodule": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageTests.build\\runner~partial.swiftmodule",
+    "swift-dependencies": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageTests.build\\runner.swiftdeps",
+    "diagnostics": "C:\\workspace\\ChiefOfStaff\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\ChiefOfStaffPackageTests.build\\runner.dia"  }
+}
