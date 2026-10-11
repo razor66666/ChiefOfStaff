@@ -1,0 +1,10 @@
+# Ignore local environment configurations & secrets
+Configuration/AppConfig.plist
+.env
+.env.local
+
+# Xcode / macOS local state
+.DS_Store
+*.xcodeproj/
+*.xcworkspace/
+.build/

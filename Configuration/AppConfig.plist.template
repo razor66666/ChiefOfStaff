@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>IngestEndpoint</key>
+    <string>https://api.yourdomain.com/v1/ingest</string>
+    <key>VaultPath</key>
+    <string>~/Documents/ObsidianVault</string>
+    <key>DefaultVisibility</key>
+    <string>private</string>
+    <key>IgnoredDirectories</key>
+    <array>
+        <string>00_Inbox</string>
+        <string>00_Private</string>
+        <string>Vault_Admin</string>
+        <string>.obsidian</string>
+        <string>.git</string>
+    </array>
+</dict>
+</plist>
