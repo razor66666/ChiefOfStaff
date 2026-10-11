@@ -12,7 +12,7 @@ final class VaultParserTests: XCTestCase {
         ---
         This is public knowledge text.
         """
-        
+
         let result = parser.parseNote(rawContent: noteContent, relativePath: "Knowledge/Architecture.md")
         XCTAssertNotNil(result)
         XCTAssertEqual(result?.title, "Public Architecture Guide")
@@ -26,7 +26,7 @@ final class VaultParserTests: XCTestCase {
         ---
         Confidential details.
         """
-        
+
         let result = parser.parseNote(rawContent: noteContent, relativePath: "Knowledge/Finances.md")
         XCTAssertNil(result, "Notes lacking 'visibility: public' must be rejected (Default Deny).")
     }
@@ -38,7 +38,7 @@ final class VaultParserTests: XCTestCase {
         ---
         Public content in an inbox folder.
         """
-        
+
         let result = parser.parseNote(rawContent: noteContent, relativePath: "00_Inbox/Note.md")
         XCTAssertNil(result, "Notes inside ignored paths must be rejected regardless of YAML tag.")
     }

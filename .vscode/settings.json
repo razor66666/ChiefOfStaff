@@ -1,8 +1,8 @@
 {
     "sourcekit-lsp.serverArguments": [
-        "-Xswiftc", "-sdk", 
+        "-Xswiftc", "-sdk",
         "-Xswiftc", "C:\\Users\\brysi\\AppData\\Local\\Programs\\Swift\\Platforms\\6.4.0\\Windows.platform\\Developer\\SDKs\\Windows.sdk",
-        "-Xswiftc", "-target", 
+        "-Xswiftc", "-target",
         "-Xswiftc", "x86_64-unknown-windows-msvc"
     ],
 

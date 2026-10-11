@@ -6,7 +6,7 @@ public enum CaptureCategory: String, Codable, CaseIterable, Identifiable {
     case grocery = "grocery"
     case brainstorm = "brainstorm"
     case dailyNote = "daily_note"
-    
+
     public var id: String { self.rawValue }
 }
 
@@ -18,7 +18,7 @@ public struct CapturePayload: Codable, Identifiable {
     public var content: String
     public var tags: [String]
     public var visibility: String
-    
+
     public init(id: UUID = UUID(), timestamp: Date = Date(), category: CaptureCategory = .inbox, title: String, content: String, tags: [String] = [], visibility: String = "private") {
         self.id = id
         self.timestamp = timestamp

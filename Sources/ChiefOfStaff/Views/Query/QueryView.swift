@@ -91,12 +91,12 @@ public struct QueryView: View {
                                         .foregroundColor(.secondary)
                                         .lineLimit(1)
                                 }
-                                
+
                                 Text(note.content)
                                     .font(.subheadline)
                                     .foregroundColor(.secondary)
                                     .lineLimit(2)
-                                
+
                                 HStack(spacing: 4) {
                                     Text("PUBLIC")
                                         .font(.caption2)
@@ -106,7 +106,7 @@ public struct QueryView: View {
                                         .background(Color.green.opacity(0.2))
                                         .foregroundColor(.green)
                                         .cornerRadius(4)
-                                    
+
                                     ForEach(Array(note.metadata.keys.prefix(3)), id: \.self) { key in
                                         if key != "title" && key != "visibility" {
                                             Text("#\(key)")
@@ -152,12 +152,12 @@ public struct QueryView: View {
                                     .bold()
                                     .foregroundColor(.green)
                             }
-                            
+
                             Divider()
-                            
+
                             Text(note.content)
                                 .font(.body)
-                            
+
                             Spacer()
                         }
                         .padding()
@@ -228,7 +228,7 @@ public struct QueryView: View {
                 allowedNotes.append(parsed)
             }
         }
-        
+
         self.parsedNotes = allowedNotes
     }
 }

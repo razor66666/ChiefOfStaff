@@ -2,15 +2,21 @@ import Foundation
 
 public class QueueManager: ObservableObject {
     public static let shared = QueueManager()
-    
+
     @Published public private(set) var pendingQueueCount: Int = 0
     private var queue: [CapturePayload] = []
-    
+
     public init() {}
 
-    public func enqueue(_ payload: CapturePayload) {
-        queue.append(payload)
-        pendingQueueCount = queue.count
+    @discardableResult
+    public func enqueue(_ payload: CapturePayload) -> Bool {
+        do {
+            queue.append(payload)
+            pendingQueueCount = queue.count
+            return true
+        } catch {
+            return false
+        }
     }
 
     public func dequeue(id: UUID) {
@@ -22,7 +28,6 @@ public class QueueManager: ObservableObject {
         return queue
     }
 
-    /// Resets the queue state (used for testing and system flushes)
     public func clearQueue() {
         queue.removeAll()
         pendingQueueCount = 0

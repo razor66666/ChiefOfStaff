@@ -2,15 +2,15 @@ import SwiftUI
 
 public struct CaptureView: View {
     @ObservedObject private var queueManager = QueueManager.shared
-    
+
     @State private var title: String = ""
     @State private var content: String = ""
     @State private var selectedCategory: CaptureCategory = .inbox
     @State private var tagsText: String = ""
     @State private var isPrivate: Bool = true
-    
+
     @FocusState private var isContentFocused: Bool
-    
+
     public init() {}
 
     public var body: some View {
@@ -46,7 +46,7 @@ public struct CaptureView: View {
                 HStack {
                     TextField("Tags (comma separated)", text: $tagsText)
                         .textFieldStyle(.roundedBorder)
-                    
+
                     Toggle(isOn: $isPrivate) {
                         Text("Private")
                             .font(.caption)
@@ -65,7 +65,7 @@ public struct CaptureView: View {
                             .font(.caption)
                             .foregroundColor(.secondary)
                     }
-                    
+
                     Button(action: handleEnqueue) {
                         HStack {
                             Image(systemName: "paperplane.fill")
@@ -101,16 +101,16 @@ public struct CaptureView: View {
             tags: parsedTags,
             visibility: isPrivate ? "private" : "public"
         )
-        
+
         // Persist locally via QueueManager
         let success = queueManager.enqueue(payload)
-        
+
         if success {
             // Clear inputs upon successful queue persist
             title = ""
             content = ""
             tagsText = ""
-            
+
             // Trigger async flush attempt
             Task {
                 await NetworkTransport.shared.flushQueue()

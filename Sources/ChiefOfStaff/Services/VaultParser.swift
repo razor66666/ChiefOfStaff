@@ -14,7 +14,7 @@ public struct ParsedNote: Identifiable, Equatable {
 public class VaultParser {
     public static let shared = VaultParser()
     private var ignoredDirectories: [String]
-    
+
     public init(ignoredDirectories: [String]? = nil) {
         self.ignoredDirectories = ignoredDirectories ?? AppConfig.shared.ignoredDirectories
     }
@@ -31,17 +31,17 @@ public class VaultParser {
 
     public func parseNote(rawContent: String, relativePath: String) -> ParsedNote? {
         guard isPathAllowed(relativePath: relativePath) else { return nil }
-        
+
         let (metadata, bodyContent) = extractFrontmatter(from: rawContent)
-        
+
         let visibility = metadata["visibility"]?.lowercased() ?? AppConfig.shared.defaultVisibility
         let isPublic = (visibility == "public")
-        
+
         guard isPublic else { return nil }
-        
+
         let fileName = URL(fileURLWithPath: relativePath).deletingPathExtension().lastPathComponent
         let title = metadata["title"] ?? fileName
-        
+
         return ParsedNote(
             relativePath: relativePath,
             title: title,
@@ -55,15 +55,15 @@ public class VaultParser {
     private func extractFrontmatter(from rawContent: String) -> ([String: String], String) {
         var metadata: [String: String] = [:]
         var bodyContent = rawContent
-        
+
         guard rawContent.hasPrefix("---") else { return (metadata, bodyContent) }
-        
+
         let lines = rawContent.components(separatedBy: .newlines)
         var frontmatterLines: [String] = []
         var contentLines: [String] = []
         var inFrontmatter = false
         var fenceCount = 0
-        
+
         for line in lines {
             if line.trimmingCharacters(in: .whitespaces) == "---" {
                 fenceCount += 1
@@ -76,7 +76,7 @@ public class VaultParser {
                 contentLines.append(line)
             }
         }
-        
+
         for fLine in frontmatterLines {
             let parts = fLine.split(separator: ":", maxSplits: 1).map { $0.trimmingCharacters(in: .whitespaces) }
             if parts.count == 2 {
@@ -87,7 +87,7 @@ public class VaultParser {
                 metadata[key] = value
             }
         }
-        
+
         bodyContent = contentLines.joined(separator: "\n").trimmingCharacters(in: .whitespacesAndNewlines)
         return (metadata, bodyContent)
     }

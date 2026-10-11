@@ -2,7 +2,7 @@ import SwiftUI
 
 public struct DashboardView: View {
     @ObservedObject private var queueManager = QueueManager.shared
-    
+
     // Configurable Council State Array (Sanitized for Open-Source)
     @State private var councilPersonas: [PersonaConfig] = [
         PersonaConfig(id: "blocker_mgr", name: "Blocker Manager", role: "Critical Path Guard", iconName: "exclamationmark.shield.fill", colorHex: "red", metricCount: 1, metricLabel: "Blockers"),
@@ -10,7 +10,7 @@ public struct DashboardView: View {
         PersonaConfig(id: "logic_mgr", name: "Logic Challenger", role: "Assumption Audit", iconName: "bolt.horizontal.fill", colorHex: "purple", metricCount: 2, metricLabel: "Challenges"),
         PersonaConfig(id: "triage_mgr", name: "Triage Gatekeeper", role: "Speculative Queue", iconName: "tray.full.fill", colorHex: "gray", metricCount: 4, metricLabel: "Queue Items")
     ]
-    
+
     public init() {}
 
     public var body: some View {
@@ -51,7 +51,7 @@ public struct DashboardView: View {
                     VStack(alignment: .leading, spacing: 12) {
                         Text("Council Persona Status")
                             .font(.headline)
-                        
+
                         LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
                             ForEach(councilPersonas) { persona in
                                 CouncilCard(persona: persona)
@@ -70,7 +70,7 @@ public struct DashboardView: View {
                                 .bold()
                                 .foregroundColor(.red)
                         }
-                        
+
                         VStack(alignment: .leading, spacing: 10) {
                             HStack(alignment: .top, spacing: 10) {
                                 Image(systemName: "xmark.octagon.fill")
@@ -121,7 +121,7 @@ struct CouncilCard: View {
                     .bold()
                     .foregroundColor(persona.metricCount > 0 ? persona.themeColor : .secondary)
             }
-            
+
             VStack(alignment: .leading, spacing: 2) {
                 Text(persona.name)
                     .font(.headline)
