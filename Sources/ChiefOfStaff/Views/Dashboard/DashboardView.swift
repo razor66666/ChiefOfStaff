@@ -44,7 +44,7 @@ public struct DashboardView: View {
                         }
                     }
                     .padding()
-                    .background(Color(.secondarySystemBackground))
+                    .background(Color.customSecondarySystemBackground)
                     .cornerRadius(12)
 
                     // Configurable Council Grid
@@ -131,7 +131,7 @@ struct CouncilCard: View {
             }
         }
         .padding()
-        .background(Color(.secondarySystemBackground))
+        .background(Color.customSecondarySystemBackground)
         .cornerRadius(12)
     }
 }

@@ -39,7 +39,7 @@ public struct QueryView: View {
                     }
                 }
                 .padding(10)
-                .background(Color(.secondarySystemBackground))
+                .background(Color.customSecondarySystemBackground)
                 .cornerRadius(10)
                 .padding(.horizontal)
                 .padding(.top, 8)
