@@ -1,0 +1,28 @@
+name: Security & CodeQL Scan
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: '0 0 * * 0' # Weekly scan
+
+jobs:
+  analyze:
+    name: CodeQL Security Scan
+    runs-on: macos-14
+    permissions:
+      security-events: write
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: swift
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3

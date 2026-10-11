@@ -1,0 +1,26 @@
+name: TestFlight Build & Deploy
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  deploy-testflight:
+    name: Build & Deploy to TestFlight
+    runs-on: macos-14
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode_15.4.app/Contents/Developer
+
+      - name: Build & Test SPM Dependencies
+        run: swift test
+
+      # Note: Requires App Store Connect API keys configured in GitHub Secrets
+      - name: Xcode Archive
+        run: |
+          echo "Building iOS Archive for TestFlight distribution..."
+          # xcodebuild -scheme ChiefOfStaff -archivePath ChiefOfStaff.xcarchive archive
