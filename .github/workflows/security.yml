@@ -24,5 +24,8 @@ jobs:
         with:
           languages: swift
 
+      - name: Build Package for CodeQL
+        run: swift build
+
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3

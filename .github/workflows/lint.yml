@@ -15,6 +15,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run SwiftLint
-        uses: norio-musha/swiftlint-action@v3
+        uses: realm/SwiftLint@main
         with:
           args: --strict
