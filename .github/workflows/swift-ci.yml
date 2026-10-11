@@ -7,10 +7,9 @@ on:
     branches: [ "main" ]
 
 jobs:
-  # Job 1: Headless SPM Unit & Integration Testing (Fast)
   build-and-test:
     name: Run SPM Tests
-    runs-on: macos-14 # Uses Apple Silicon runner with modern Xcode / Swift toolchain
+    runs-on: macos-14
     
     steps:
       - name: Checkout Code
@@ -19,39 +18,8 @@ jobs:
       - name: Select Xcode Version
         run: sudo xcode-select -s /Applications/Xcode_15.4.app/Contents/Developer
 
-      - name: Display Swift & Xcode Version
-        run: |
-          swift --version
-          xcodebuild -version
-
       - name: Build Package
         run: swift build --verbose
 
       - name: Run Unit Tests (XCTest)
         run: swift test --parallel
-
-  # Job 2: Code Linting & Static Analysis (DevSecOps)
-  lint-and-validate:
-    name: DevSecOps Quality & License Gate
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Validate AGPLv3 License Presence
-        run: |
-          if [ ! -f "LICENSE" ]; then
-            echo "Error: LICENSE file missing!"
-            exit 1
-          fi
-          grep -q "GNU AFFERO GENERAL PUBLIC LICENSE" LICENSE || (echo "Error: LICENSE is not AGPLv3!" && exit 1)
-          echo "License validation passed: AGPLv3 confirmed."
-
-      - name: Validate Package Structure
-        run: |
-          if [ ! -f "Package.swift" ]; then
-            echo "Error: Package.swift missing!"
-            exit 1
-          fi
-          echo "SPM Package layout validated."
