@@ -1,28 +1,21 @@
 import Foundation
 
-/// Handles dispatching queued payloads over HTTP REST/Webhook endpoints or email workers.
+/// Handles dispatching queued payloads over HTTP REST/Webhook endpoints.
 public class NetworkTransport {
     public static let shared = NetworkTransport()
     
-    private let ingestEndpoint: URL?
-    
-    public init() {
-        // Reads IngestEndpoint from AppConfig.plist or falls back to default local ingest server
-        if let path = Bundle.main.path(forResource: "AppConfig", ofType: "plist"),
-           let dict = NSDictionary(contentsOfFile: path) as? [String: Any],
-           let endpointString = dict["IngestEndpoint"] as? String {
-            self.ingestEndpoint = URL(string: endpointString)
-        } else {
-            self.ingestEndpoint = URL(string: "https://api.yourdomain.local/v1/ingest")
-        }
+    private var ingestEndpoint: URL {
+        return AppConfig.shared.ingestEndpoint
     }
+    
+    public init() {}
 
     /// Iterates through pending local queue payloads and attempts transmission.
     public func flushQueue() async {
         let pending = QueueManager.shared.fetchAllPendingPayloads()
         guard !pending.isEmpty else { return }
         
-        print("[NetworkTransport] Beginning queue flush for \(pending.count) payload(s)...")
+        print("[NetworkTransport] Beginning queue flush for \(pending.count) payload(s) to \(ingestEndpoint.absoluteString)...")
         
         for payload in pending {
             let success = await sendPayload(payload)
@@ -30,19 +23,14 @@ public class NetworkTransport {
                 QueueManager.shared.dequeue(id: payload.id)
             } else {
                 print("[NetworkTransport] Flush paused: payload \(payload.id) failed transmission. Holding in queue.")
-                break // Stop batch flush on network error to preserve sequential order
+                break // Stop batch flush on network error to preserve order
             }
         }
     }
 
     /// Transmits a single CapturePayload over HTTPS REST/Webhook.
     public func sendPayload(_ payload: CapturePayload) async -> Bool {
-        guard let endpoint = ingestEndpoint else {
-            print("[NetworkTransport] Invalid ingest endpoint URL.")
-            return false
-        }
-        
-        var request = URLRequest(url: endpoint)
+        var request = URLRequest(url: ingestEndpoint)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.timeoutInterval = 15.0

@@ -14,19 +14,10 @@ public struct ParsedNote: Identifiable, Equatable {
 public class VaultParser {
     public static let shared = VaultParser()
     
-    // Default ignored paths (Defense-in-Depth Rule 2)
-    private var ignoredDirectories: [String] = [
-        "00_Inbox",
-        "00_Private",
-        "Vault_Admin",
-        ".obsidian",
-        ".git"
-    ]
+    private var ignoredDirectories: [String]
     
     public init(ignoredDirectories: [String]? = nil) {
-        if let customIgnores = ignoredDirectories {
-            self.ignoredDirectories = customIgnores
-        }
+        self.ignoredDirectories = ignoredDirectories ?? AppConfig.shared.ignoredDirectories
     }
 
     /// Evaluates if a relative file path is permitted for indexing.
@@ -42,12 +33,8 @@ public class VaultParser {
     }
 
     /// Parses raw note content to extract YAML frontmatter and evaluate visibility.
-    /// - Parameters:
-    ///   - rawContent: Full string content of the Markdown note.
-    ///   - relativePath: Note location in vault for path filtering.
-    /// - Returns: A ParsedNote object if permitted and public, or nil if private/excluded.
     public func parseNote(rawContent: String, relativePath: String) -> ParsedNote? {
-        // Rule 2 Check: Path exclusion
+        // Defense-in-Depth Rule 2: Path exclusion
         guard isPathAllowed(relativePath: relativePath) else {
             return nil
         }
@@ -82,7 +69,6 @@ public class VaultParser {
                 }
             }
             
-            // Parse Key-Value YAML lines
             for fLine in frontmatterLines {
                 let parts = fLine.split(separator: ":", maxSplits: 1).map { $0.trimmingCharacters(in: .whitespaces) }
                 if parts.count == 2 {
@@ -95,15 +81,14 @@ public class VaultParser {
             bodyContent = contentLines.joined(separator: "\n").trimmingCharacters(in: .whitespacesAndNewlines)
         }
         
-        // Rule 1 Check: Default Deny. Must explicitly state `visibility: public`
-        let visibility = metadata["visibility"]?.lowercased() ?? "private"
+        // Defense-in-Depth Rule 1: Default Deny. Must explicitly state `visibility: public`
+        let visibility = metadata["visibility"]?.lowercased() ?? AppConfig.shared.defaultVisibility
         let isPublic = (visibility == "public")
         
         guard isPublic else {
             return nil
         }
         
-        // Fallback title to filename if no frontmatter title
         let fileName = URL(fileURLWithPath: relativePath).deletingPathExtension().lastPathComponent
         let title = metadata["title"] ?? fileName
         
