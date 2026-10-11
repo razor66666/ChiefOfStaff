@@ -1,12 +1,13 @@
 import SwiftUI
 
 public struct CaptureView: View {
+    @ObservedObject private var queueManager = QueueManager.shared
+    
     @State private var title: String = ""
     @State private var content: String = ""
     @State private var selectedCategory: CaptureCategory = .inbox
     @State private var tagsText: String = ""
     @State private var isPrivate: Bool = true
-    @State private var pendingQueueCount: Int = 0 // Staged queue counter
     
     @FocusState private var isContentFocused: Bool
     
@@ -59,8 +60,8 @@ public struct CaptureView: View {
 
                 // Queue & Action Bar Footer
                 VStack(spacing: 8) {
-                    if pendingQueueCount > 0 {
-                        Text("\(pendingQueueCount) items queued locally")
+                    if queueManager.pendingQueueCount > 0 {
+                        Text("\(queueManager.pendingQueueCount) items queued locally for sync")
                             .font(.caption)
                             .foregroundColor(.secondary)
                     }
@@ -84,7 +85,6 @@ public struct CaptureView: View {
             }
             .navigationTitle("Quick Capture")
             .onAppear {
-                // Auto-focus content body on view load (Quickdown pattern)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     self.isContentFocused = true
                 }
@@ -102,14 +102,19 @@ public struct CaptureView: View {
             visibility: isPrivate ? "private" : "public"
         )
         
-        // TODO: Pass to QueueManager for local persistence & background transport
-        print("Staged Payload for Queue: \(payload)")
-        QueueManager.shared.enqueue(payload)
+        // Persist locally via QueueManager
+        let success = queueManager.enqueue(payload)
         
-        // Reset form
-        title = ""
-        content = ""
-        tagsText = ""
-        pendingQueueCount += 1
+        if success {
+            // Clear inputs upon successful queue persist
+            title = ""
+            content = ""
+            tagsText = ""
+            
+            // Trigger async flush attempt
+            Task {
+                await NetworkTransport.shared.flushQueue()
+            }
+        }
     }
 }
