@@ -70,7 +70,11 @@ public class VaultParser {
                 if fenceCount == 1 { inFrontmatter = true; continue }
                 if fenceCount == 2 { inFrontmatter = false; continue }
             }
-            inFrontmatter ? frontmatterLines.append(line) : contentLines.append(line)
+            if inFrontmatter {
+                frontmatterLines.append(line)
+            } else {
+                contentLines.append(line)
+            }
         }
         
         for fLine in frontmatterLines {
